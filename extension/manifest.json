@@ -1,0 +1,27 @@
+{
+  "name": "Webpage Summarizer",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Summarize web pages and chat with webpages. Built using useLLM react hook and ChatGPT API.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Webpage Summarizer"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js",
+        "readability.js"
+      ]
+    }
+  ]
+}
