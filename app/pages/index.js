@@ -26,7 +26,10 @@ function Home() {
       await llm.chat({
         stream: true,
         messages: [
-          { role: "user", content: article.textContent.slice(0, 3000) },
+          {
+            role: "user",
+            content: article.textContent.split(" ").slice(0, 2000).join(" "),
+          },
           { role: "user", content: "Summarize" },
         ],
         onStream: ({ message, isLast }) => {
